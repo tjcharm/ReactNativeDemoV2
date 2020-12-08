@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View, Button } from "react-native";
+import { theme } from "./Theme";
 import Home from "./routes/home/Home";
 import Account from "./routes/account/Account";
 import MainNavigator from "./navigation/MainNavigator";
@@ -22,7 +23,7 @@ export default function App() {
         tabBarOptions={{
           activeBackgroundColor: "#333",
           style: {
-            backgroundColor: "#3B82F6",
+            backgroundColor: theme.mainBackgroundColor,
           },
           labelStyle: { color: "white", marginBottom: 15, fontSize: 15 },
         }}
@@ -37,7 +38,7 @@ export default function App() {
   );
 }
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   header: {
     backgroundColor: "#3B82F6",
   },
