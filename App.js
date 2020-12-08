@@ -10,6 +10,7 @@ import MainNavigator from "./navigation/MainNavigator";
 import HomeStackManager from "./routes/home/HomeStackManager";
 import AccountStackManager from "./routes/account/AccountStackManager";
 import BuyStackManager from "./routes/buy/BuyStackManager";
+import SellStackManager from "./routes/sell/SellStackManager";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -29,17 +30,15 @@ export default function App() {
       >
         <Tab.Screen name="Home" component={HomeStackManager} />
         <Tab.Screen name="Buy" component={BuyStackManager} />
+        <Tab.Screen name="Sell" component={SellStackManager} />
         <Tab.Screen name="Account" component={AccountStackManager} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#333",
-    alignItems: "center",
-    justifyContent: "center",
+export const styles = StyleSheet.create({
+  header: {
+    backgroundColor: "#3B82F6",
   },
 });
