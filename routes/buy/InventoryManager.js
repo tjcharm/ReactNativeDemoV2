@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text } from "react-native";
 import { Button } from "react-native-elements";
-import { categories } from "../../Categories";
+import { categories } from "../../AppConfig/Categories";
 
 export default function InventoryManager({ navigation }) {
   const [currentCategory, setCurrentCategory] = useState("cars");

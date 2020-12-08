@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View, Button } from "react-native";
-import { theme } from "./Theme";
+import { theme } from "./AppConfig/Theme";
 import Home from "./routes/home/Home";
 import Account from "./routes/account/Account";
 import MainNavigator from "./navigation/MainNavigator";

@@ -1,7 +1,7 @@
 import React from "react";
 import Sell from "../sell/Sell";
 import { createStackNavigator } from "@react-navigation/stack";
-import { theme } from "../../Theme";
+import { theme } from "../../AppConfig/Theme";
 
 const SellStack = createStackNavigator();
 export default function SellStackManager() {

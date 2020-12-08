@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { View, Text } from "react-native";
 import Account from "./Account";
-import { theme } from "../../Theme";
+import { theme } from "../../AppConfig/Theme";
 
 const AccountStack = createStackNavigator();
 
