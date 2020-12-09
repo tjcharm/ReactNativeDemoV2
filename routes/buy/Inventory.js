@@ -35,7 +35,7 @@ export default function Inventory({ route }) {
     inventoryItems.map((item) => {
       return items.push(
         //   adjusts width of each element here
-        <InventoryItemPreview key={item._id} category={item} />
+        <InventoryItemPreview key={item._id} item={item} />
       );
     });
   } else {
