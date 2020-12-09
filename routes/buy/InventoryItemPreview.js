@@ -5,15 +5,13 @@ import { Card } from "react-native-elements";
 export default function InventoryItemPreview({ item }) {
   let itemImage = {
     uri: `https://react-store-node-api.herokuapp.com/inventoryItems/images/${item.itemId}`,
-    width: 20,
-    height: 20,
   };
 
   return (
-    <View style={{ marginHorizontal: 10 }}>
+    <View style={{}}>
       <Card>
         <Card.Title>{item.itemModel}</Card.Title>
-        <Card.Image source={itemImage} />
+        <Card.Image style={{ width: 300 }} source={itemImage} />
       </Card>
     </View>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import InventoryItemPreview from "./InventoryItemPreview";
 
 export default function Inventory({ route }) {
@@ -35,7 +36,9 @@ export default function Inventory({ route }) {
     inventoryItems.map((item) => {
       return items.push(
         //   adjusts width of each element here
-        <InventoryItemPreview key={item._id} item={item} />
+        <View key={item._id} style={{ flex: 1, flexDirection: "column" }}>
+          <InventoryItemPreview item={item} />
+        </View>
       );
     });
   } else {
@@ -49,13 +52,14 @@ export default function Inventory({ route }) {
   return (
     <View
       style={{
-        flex: 1,
+        height: "100%",
+        flexDirection: "column",
         backgroundColor: "#3B82F6",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
-      <Text>{items}</Text>
+      <ScrollView>{items}</ScrollView>
     </View>
   );
 }
