@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import InventoryItemPreview from "./InventoryItemPreview";
 
-export default function Inventory({ route }) {
+export default function Inventory({ route, navigation }) {
   const [isLoading, setisLoading] = useState(true);
   const [inventoryItems, setinventoryItems] = useState();
   // fetches all inventory items from the react-store database
@@ -36,9 +36,11 @@ export default function Inventory({ route }) {
     inventoryItems.map((item) => {
       return items.push(
         //   adjusts width of each element here
-        <View key={item._id} style={{ flex: 1, flexDirection: "column" }}>
-          <InventoryItemPreview item={item} />
-        </View>
+        <InventoryItemPreview
+          navigation={navigation}
+          key={item._id}
+          item={item}
+        />
       );
     });
   } else {

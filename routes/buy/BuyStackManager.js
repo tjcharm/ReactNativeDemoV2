@@ -4,6 +4,7 @@ import { View, Text } from "react-native";
 import { theme } from "../../AppConfig/Theme";
 import InventoryManager from "./InventoryManager";
 import Inventory from "./Inventory";
+import InventoryItemMain from "./InventoryItemMain";
 
 const BuyStack = createStackNavigator();
 
@@ -17,8 +18,25 @@ export default function BuyStackManager() {
       }}
       initialRouteName="InventoryManager"
     >
-      <BuyStack.Screen name="InventoryManager" component={InventoryManager} />
-      <BuyStack.Screen name="Inventory" component={Inventory} />
+      <BuyStack.Screen
+        name="InventoryManager"
+        component={InventoryManager}
+        options={{ title: "Buy from us" }}
+      />
+      <BuyStack.Screen
+        name="Inventory"
+        component={Inventory}
+        options={({ route }) => ({
+          title: route.params.category,
+        })}
+      />
+      <BuyStack.Screen
+        name="InventoryItemMain"
+        component={InventoryItemMain}
+        options={({ route }) => ({
+          title: route.params.category,
+        })}
+      />
     </BuyStack.Navigator>
   );
 }

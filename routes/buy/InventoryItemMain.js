@@ -1,14 +1,13 @@
-import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import { Button, Card } from "react-native-elements";
-import { TouchableOpacity } from "react-native";
 
-export default function InventoryItemPreview({ item, navigation }) {
+export default function InventoryItemMain({ route }) {
+  let item = route.params.item;
+
   let itemImage = {
     uri: `https://react-store-node-api.herokuapp.com/inventoryItems/images/${item.itemId}`,
   };
-
   return (
     <TouchableOpacity
       style={{ flex: 1, flexDirection: "column" }}

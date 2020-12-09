@@ -21,6 +21,7 @@ export default function InventoryManager({ navigation }) {
           onPress={() => {
             navigation.navigate("Inventory", {
               category: cat,
+              navigation: navigation,
             });
           }}
           title={cat}
