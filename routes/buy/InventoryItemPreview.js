@@ -22,7 +22,7 @@ export default function InventoryItemPreview({ item, navigation }) {
       <Card
         containerStyle={{
           backgroundColor: "#333",
-          borderRadius: "8%",
+          borderRadius: 8,
           borderColor: "#333",
         }}
         wrapperStyle={{

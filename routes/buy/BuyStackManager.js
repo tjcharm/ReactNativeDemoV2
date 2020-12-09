@@ -15,6 +15,7 @@ export default function BuyStackManager() {
         headerStyle: {
           backgroundColor: theme.mainBackgroundColor,
         },
+        headerTintColor: "white",
       }}
       initialRouteName="InventoryManager"
     >

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import InventoryItemPreview from "./InventoryItemPreview";
-
+import { theme } from "../../AppConfig/Theme";
 export default function Inventory({ route, navigation }) {
   const [isLoading, setisLoading] = useState(true);
   const [inventoryItems, setinventoryItems] = useState();
@@ -61,7 +61,13 @@ export default function Inventory({ route, navigation }) {
         justifyContent: "center",
       }}
     >
-      <ScrollView>{items}</ScrollView>
+      <ScrollView
+        style={{
+          backgroundColor: theme.mainBackgroundColor,
+        }}
+      >
+        {items}
+      </ScrollView>
     </View>
   );
 }

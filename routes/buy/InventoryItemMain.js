@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import { Button, Card } from "react-native-elements";
-
+import { theme } from "../../AppConfig/Theme";
 export default function InventoryItemMain({ route }) {
   let item = route.params.item;
 
@@ -9,20 +9,19 @@ export default function InventoryItemMain({ route }) {
     uri: `https://react-store-node-api.herokuapp.com/inventoryItems/images/${item.itemId}`,
   };
   return (
-    <TouchableOpacity
-      style={{ flex: 1, flexDirection: "column" }}
-      onPress={() => {
-        navigation.navigate("InventoryItemMain", {
-          category: item.itemCategory,
-          item: item,
-        });
+    <View
+      style={{
+        flex: 1,
+        flexDirection: "column",
+        backgroundColor: theme.mainBackgroundColor,
       }}
     >
       <Card
         containerStyle={{
           backgroundColor: "#333",
-          borderRadius: "8%",
+          borderRadius: 8,
           borderColor: "#333",
+          height: "90%",
         }}
         wrapperStyle={{
           alignItems: "center",
@@ -57,8 +56,14 @@ export default function InventoryItemMain({ route }) {
         >
           {item.itemDescription}
         </Text>
-        <Button type="solid" title="Leave a Comment" />
+        <Button
+          type="solid"
+          title="Leave a Comment"
+          onPress={() => {
+            alert("no...");
+          }}
+        />
       </Card>
-    </TouchableOpacity>
+    </View>
   );
 }
