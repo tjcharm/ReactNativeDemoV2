@@ -1,1 +1,1 @@
-export const categories = ["car", "truck", "parts"];
+export const categories = ["car", "truck", "motorcycle", "parts"];
